@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Mono";
+  src: url("../public/fonts/SF-Mono.dmg");
+}
+
+@font-face {
+  font-family: "Regular";
+  src: url("../public/fonts/Mark-Pro.ttf");
+}
+
+@font-face {
+  font-family: "Bold";
+  src: url("../public/fonts/Mark-Pro-Bold.ttf");
+}
+
+.link-underline {
+    border-bottom-width: 0;
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+    background-size: 0 3px;
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    transition: background-size .4s ease-in-out;
+}
+
+.link-underline-black {
+    background-image: linear-gradient(transparent, transparent), linear-gradient(90deg, rgba(255,53,53,1) 0%, rgba(229, 103, 103, 0.5) 100%);
+}
+
+.link-underline:hover {
+    background-size: 100% 3px;
+    background-position: 0% 100%;
+}
+
+.backgrund-facha {
+    background-color: #000000;
+    background-image: url('fondo.svg');
+    background-size: cover;
+}
+
+.backgrund-aboutme {
+    background-color: #000000;
+    background-image: url('fondo-aboutme.svg');
+    background-size: cover;
+}
+
+.border-gradient-white-red{
+    border-image: linear-gradient(315deg, red, white) 1;
+    perspective: 1px;
+    overflow: hidden;
+    border-radius: 50px; 
+}
+
+.box {
+    position: relative;
+  }
+.box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 1rem; 
+    padding: 10px; 
+    background:linear-gradient(315deg,red, white); 
+    -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude; 
+}
+
+.btn-gradient-2 {
+    background: 
+      linear-gradient(var(--color-bg), var(--color-bg)) padding-box,
+      linear-gradient(to right, darkblue, darkorchid) border-box;
+    border-radius: 50em;
+    border: 4px solid transparent;
+  }
+
+.btn-gradient-2 {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--btn-font-size, 1em);
+  color: var(--color-contrast-medium);
+  padding: var(--space-xs) var(--space-md);
+  cursor: pointer;
+  transition: color .2s;
+}
