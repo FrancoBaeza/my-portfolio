@@ -1,9 +1,18 @@
 import LandPage from "./LandPage";
-import AboutMe from "./AboutMe";
 
 export default () => {
+  const handleScroll = (e) => {
+    console.log("sasd");
+    if (e.currentTarget.scrollTop === 0) {
+      alert("on top");
+    }
+  };
+
   return (
-    <div className="flex flex-col justify-center w-full">
+    <div
+      onScroll={handleScroll}
+      className="flex flex-col justify-center w-full"
+    >
       <LandPage />
     </div>
   );

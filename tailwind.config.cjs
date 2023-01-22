@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         "base-secondary": "#F1962E",
         "base-primary": "#C7F8FF",
+        "base-bg": "#164E63",
       },
       fontFamily: {
         mono: ["Mono", "monospace"],
