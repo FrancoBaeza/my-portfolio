@@ -1,13 +1,23 @@
+import { useEffect, useRef } from "react";
+
 import Icon from "./icons/SocialIcon";
+import { useScrollDirection } from "../hooks/useScrollDirection";
 
 export default () => {
   const iconsClasses =
     " w-[25px] hover:fill-base-secondary hover:-translate-y-1 duration-200 fill-base-primary cursor-pointer";
 
+  const [scrollDir, isTop] = useScrollDirection();
+
+  console.log(useScrollDirection());
   return (
-    <div className=" bg-base-bg h-[3000px]">
+    <div className=" bg-base-bg">
       {/* topbar */}
-      <div className="backdrop-blur-sm shadow-xl fixed top-0 left-0 w-full h-[90px] z-50 flex flex-row justify-between items-center pl-[20px] pr-[100px]">
+      <div
+        className={` ${!isTop && "shadow-xl"} ${
+          scrollDir === "down" ? "-translate-y-24" : "translate-y-0"
+        } duration-300 backdrop-blur-sm fixed top-0 left-0 w-full h-[90px] z-50 flex flex-row justify-between items-center pl-[20px] pr-[100px]`}
+      >
         {/* logo */}
         <svg
           version="1.0"
@@ -78,8 +88,8 @@ export default () => {
       </div>
 
       {/* center main section */}
-      <div className="px-[100px] pt-[100px]">
-        {/* main central seccion */}
+      <div className="px-[100px] pt-[100px] h-[3000px] ">
+        {/* first seccion */}
         <section className=" w-full flex flex-col">
           <section className="flex flex-col gap-3 text-slate-200">
             <p className=" font-medium text-lg font-mono tracking-tighter text-base-secondary">
