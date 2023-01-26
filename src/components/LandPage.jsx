@@ -9,14 +9,13 @@ export default () => {
 
   const [scrollDir, isTop] = useScrollDirection();
 
-  console.log(useScrollDirection());
   return (
     <div className=" bg-base-bg">
       {/* topbar */}
       <div
         className={` ${!isTop && "shadow-xl"} ${
           scrollDir === "down" ? "-translate-y-24" : "translate-y-0"
-        } duration-300 backdrop-blur-sm fixed top-0 left-0 w-full h-[90px] z-50 flex flex-row justify-between items-center pl-[20px] pr-[100px]`}
+        } duration-300 backdrop-blur-sm fixed top-0 left-0 w-full h-[80px] z-50 flex flex-row justify-between items-center pl-[20px] pr-[100px]`}
       >
         {/* logo */}
         <svg
@@ -90,23 +89,23 @@ export default () => {
       {/* center main section */}
       <div className="px-[100px] pt-[100px] h-[3000px] ">
         {/* first seccion */}
-        <section className=" w-full flex flex-col">
-          <section className="flex flex-col gap-3 text-slate-200">
-            <p className=" font-medium text-lg font-mono tracking-tighter text-base-secondary">
-              Hi! I'm <span className="font-bold ">Franco</span>.
-            </p>
-            <h1 className="text-base-primary text-7xl tracking-tighter font-bold w-[70%] leading-[80px] font-markProBold">
-              I turn your ideas into{" "}
-              <span className=" text-base-secondary">reality</span>.
-            </h1>
-            <p className="text-base-primary w-[600px] font-markPro">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea
-              commodo consequat.
-            </p>
-          </section>
+        <section className=" w-full flex flex-col gap-3 text-slate-200">
+          <p className=" font-medium text-lg font-mono tracking-tighter text-base-secondary">
+            Hi! I'm <span className="font-bold ">Franco</span>.
+          </p>
+          <h1 className="text-base-primary text-7xl tracking-tighter font-bold w-[70%] leading-[80px] font-markProBold">
+            I turn your ideas into{" "}
+            <span className=" text-base-secondary">reality</span>.
+          </h1>
+          <p className="text-base-primary w-[600px] font-markPro">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+            ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+          <button className=" hover:bg-base-secondary/30 duration-300 font-mono self-start mt-10 p-3 border-base-secondary border-2 rounded">
+            Check out my resume!
+          </button>
         </section>
       </div>
 
