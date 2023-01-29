@@ -87,22 +87,27 @@ export default () => {
       </div>
 
       {/* center main section */}
-      <div className="px-[100px] pt-[100px] h-[3000px] ">
+      <div className="px-[100px] h-[3000px] flex justify-center">
         {/* first seccion */}
-        <section className=" w-full flex flex-col gap-3 text-slate-200">
+        <section className="h-screen justify-center w-[1000px] gap-3 flex flex-col text-slate-200">
           <p className=" font-medium text-lg font-mono tracking-tighter text-base-secondary">
-            Hi! I'm <span className="font-bold ">Franco</span>.
+            Hi! I'm <span className="font-bold ">Franco</span>
           </p>
-          <h1 className="text-base-primary text-7xl tracking-tighter font-bold w-[70%] leading-[80px] font-markProBold">
-            I turn your ideas into{" "}
-            <span className=" text-base-secondary">reality</span>.
-          </h1>
+
+          <div>
+            <h1 className="text-base-primary text-7xl tracking-tighter font-bold w-[70%] leading-[80px] font-markProBold">
+              I turn your ideas into
+            </h1>
+            <h2 className="text-base-secondary text-7xl tracking-tighter font-bold w-[70%] leading-[80px] font-markProBold">reality</h2>
+          </div>
+          
           <p className="text-base-primary w-[600px] font-markPro">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna
             aliqua. Ut enim ad minim veniam, quis nostrud exercitation
             ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
+
           <button className=" hover:bg-base-secondary/30 duration-300 font-mono self-start mt-10 p-3 border-base-secondary border-2 rounded">
             Check out my resume!
           </button>

@@ -4,17 +4,17 @@
 
 @font-face {
   font-family: "Mono";
-  src: url("../public/fonts/SF-Mono.dmg");
+  src: url("/fonts/SF-Mono.dmg");
 }
 
 @font-face {
   font-family: "Regular";
-  src: url("../public/fonts/Mark-Pro.ttf");
+  src: url("/fonts/Mark-Pro.ttf");
 }
 
 @font-face {
   font-family: "Bold";
-  src: url("../public/fonts/Mark-Pro-Bold.ttf");
+  src: url("/fonts/Mark-Pro-Bold.ttf");
 }
 
 .vertical-writing {
