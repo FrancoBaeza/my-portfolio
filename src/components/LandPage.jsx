@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Icon from "./icons/SocialIcon";
+import AboutMe from "./AboutMe";
 import { useScrollDirection } from "../hooks/useScrollDirection";
 
 export default () => {
@@ -107,9 +108,9 @@ export default () => {
       </div>
 
       {/* center main section */}
-      <div className="px-[100px] h-[3000px] flex justify-center">
+      <div className="px-[100px] h-[3000px] flex flex-col items-center">
         {/* first seccion */}
-        <section className="h-screen justify-center w-[1000px] gap-5 flex flex-col text-slate-200">
+        <section className="h-screen justify-center w-[1000px] gap-5 flex flex-col">
           <p className={` delay-[1.2s] ${animationFirstSection} font-medium text-lg font-mono tracking-tighter text-base-secondary `}>
             Hi! I'm <span className="font-bold ">Franco</span>
           </p>
@@ -121,17 +122,23 @@ export default () => {
             <h2 className={`delay-[1.4s] ${animationFirstSection} text-base-secondary text-7xl tracking-tighter font-bold w-[70%] leading-[80px] font-markProBold`}>reality</h2>
           </div>
           
-          <p className={`delay-[1.5s] ${animationFirstSection} text-base-primary w-[600px] font-markPro`}>
+          <p className={`delay-[1.5s] ${animationFirstSection} text-400-primary w-[600px] font-markPro`}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna
             aliqua. Ut enim ad minim veniam, quis nostrud exercitation
             ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
 
-          <button className={`delay-[1.6s] ${animationFirstSection} hover:bg-base-secondary/30 duration-300 font-mono self-start mt-10 p-3 border-base-secondary border-2 rounded`}>
-            Check out my resume!
-          </button>
+          <span className={`delay-[1.6s] ${animationFirstSection}`}>
+            <button className={` text-400-primary hover:text-base-primary hover:bg-base-secondary/30 duration-300 font-mono self-start mt-10 p-3 border-base-secondary border-2 rounded`}>
+              Check out my resume!
+            </button>
+          </span>
+         
         </section>
+
+        {/* 1. about me */}
+        <AboutMe />
       </div>
 
       {/* right fixed side */}
