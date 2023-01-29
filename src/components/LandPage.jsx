@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 
 import Icon from "./icons/SocialIcon";
 import { useScrollDirection } from "../hooks/useScrollDirection";
@@ -7,7 +7,16 @@ export default () => {
   const iconsClasses =
     " w-[25px] hover:fill-base-secondary hover:-translate-y-1 duration-200 fill-base-primary cursor-pointer";
 
+  const [active, setActive] = useState(false);
   const [scrollDir, isTop] = useScrollDirection();
+
+  useEffect(() => {
+    setActive(true);
+  }, []);
+
+  const animationFirstSection = `duration-[0.5s] ${active ? "translate-y-0 opacity-1" : "translate-y-3 opacity-0"}`;
+  const animationHeader = `duration-[0.6s] ${active ? "translate-y-0 opacity-1" : "-translate-y-6 opacity-0"}`;
+  const animationSideBars = `duration-[0.6s] ${active ? "opacity-1" : "opacity-0"}`;
 
   return (
     <div className=" bg-base-bg">
@@ -44,44 +53,55 @@ export default () => {
         </svg>
 
         <div className="flex flex-row gap-5 font-mono text-base-primary">
-          <a
-            href=""
-            className=" hover:text-base-secondary duration-200"
-          >
-            <span className=" mr-[3px] text-base-secondary">1.</span>
-            About
-          </a>
-          <a
-            href=""
-            className=" hover:text-base-secondary duration-200"
-          >
-            <span className=" mr-[3px] text-base-secondary">2.</span>
-            Experience
-          </a>
-          <a
-            href=""
-            className=" hover:text-base-secondary duration-200"
-          >
-            <span className=" mr-[3px] text-base-secondary">3.</span>
-            Projects
-          </a>
-          <a
-            href=""
-            className=" hover:text-base-secondary duration-200"
-          >
-            <span className=" mr-[3px] text-base-secondary">4.</span>
-            Contact
-          </a>
+          <span className={`delay-[0.3s] ${animationHeader}`}>
+            <a
+              href=""
+              className=" hover:text-base-secondary duration-200"
+            >
+              <span className=" mr-[3px] text-base-secondary">1.</span>
+              About
+            </a>
+          </span>
+          
+          <span className={`delay-[0.4s] ${animationHeader}`}>
+            <a
+              href=""
+              className=" hover:text-base-secondary duration-200"
+            >
+              <span className=" mr-[3px] text-base-secondary">2.</span>
+              Experience
+            </a>
+          </span>
+
+          <span className={`delay-[0.5s] ${animationHeader}`}>
+            <a
+              href=""
+              className=" hover:text-base-secondary duration-200"
+            >
+              <span className=" mr-[3px] text-base-secondary">3.</span>
+              Projects
+            </a>
+          </span>
+
+          <span className={`delay-[0.6s] ${animationHeader}`}>
+            <a
+              href=""
+              className=" hover:text-base-secondary duration-200"
+            >
+              <span className=" mr-[3px] text-base-secondary">4.</span>
+              Contact
+            </a>
+          </span>
         </div>
       </div>
 
       {/* left fixed side */}
       <div className="fixed left-0 bottom-0 z-50 w-[100px] flex flex-col items-center gap-4">
         <div className=" flex flex-col gap-4">
-          <Icon className={iconsClasses} url="" icon="github" />
-          <Icon className={iconsClasses} url="" icon="linkedin" />
-          <Icon className={iconsClasses} url="" icon="instagram" />
-          <Icon className={iconsClasses} url="" icon="mail" />
+          <Icon className={`${iconsClasses} ${animationSideBars} delay-[2.6s]`} url="" icon="github" />
+          <Icon className={`${iconsClasses} ${animationSideBars} delay-[2.4s]`} url="" icon="linkedin" />
+          <Icon className={`${iconsClasses} ${animationSideBars} delay-[2.2s]`} url="" icon="instagram" />
+          <Icon className={`${iconsClasses} ${animationSideBars} delay-[2.0s]`} url="" icon="mail" />
         </div>
         <span className="w-[1px] h-40  border-r-[2px] border-base-secondary "></span>
       </div>
@@ -89,26 +109,26 @@ export default () => {
       {/* center main section */}
       <div className="px-[100px] h-[3000px] flex justify-center">
         {/* first seccion */}
-        <section className="h-screen justify-center w-[1000px] gap-3 flex flex-col text-slate-200">
-          <p className=" font-medium text-lg font-mono tracking-tighter text-base-secondary">
+        <section className="h-screen justify-center w-[1000px] gap-5 flex flex-col text-slate-200">
+          <p className={` delay-[1.2s] ${animationFirstSection} font-medium text-lg font-mono tracking-tighter text-base-secondary `}>
             Hi! I'm <span className="font-bold ">Franco</span>
           </p>
 
           <div>
-            <h1 className="text-base-primary text-7xl tracking-tighter font-bold w-[70%] leading-[80px] font-markProBold">
+            <h1 className={`delay-[1.3s] ${animationFirstSection} text-base-primary text-7xl tracking-tighter font-bold w-[70%] leading-[80px] font-markProBold`}>
               I turn your ideas into
             </h1>
-            <h2 className="text-base-secondary text-7xl tracking-tighter font-bold w-[70%] leading-[80px] font-markProBold">reality</h2>
+            <h2 className={`delay-[1.4s] ${animationFirstSection} text-base-secondary text-7xl tracking-tighter font-bold w-[70%] leading-[80px] font-markProBold`}>reality</h2>
           </div>
           
-          <p className="text-base-primary w-[600px] font-markPro">
+          <p className={`delay-[1.5s] ${animationFirstSection} text-base-primary w-[600px] font-markPro`}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna
             aliqua. Ut enim ad minim veniam, quis nostrud exercitation
             ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
 
-          <button className=" hover:bg-base-secondary/30 duration-300 font-mono self-start mt-10 p-3 border-base-secondary border-2 rounded">
+          <button className={`delay-[1.6s] ${animationFirstSection} hover:bg-base-secondary/30 duration-300 font-mono self-start mt-10 p-3 border-base-secondary border-2 rounded`}>
             Check out my resume!
           </button>
         </section>
@@ -118,7 +138,7 @@ export default () => {
       <div className="fixed right-0 top-0 z-50 w-[100px] flex flex-col items-center gap-4">
         <span className=" border-base-secondary border-[2px] !border-t-0 rounded-b-md w-6 h-44"></span>
         <a
-          className="vertical-writing text-base-primary text-sm tracking-[2px] font-markPro hover:text-base-secondary duration-200"
+          className={`${animationSideBars} delay-[3s] vertical-writing text-base-primary text-sm tracking-[2px] font-markPro hover:text-base-secondary duration-200`}
           href=""
         >
           francobaezagraf@gmail.com
