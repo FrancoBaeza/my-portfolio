@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import Icon from "./icons/SocialIcon";
 import AboutMe from "./AboutMe";
+import Experience from "./Experience";
 import { useScrollDirection } from "../hooks/useScrollDirection";
 
 export default () => {
@@ -151,6 +152,9 @@ export default () => {
 
         {/* 1. about me */}
         <AboutMe />
+
+        {/* 2. experience */}
+        <Experience />
       </div>
 
       {/* right fixed side */}

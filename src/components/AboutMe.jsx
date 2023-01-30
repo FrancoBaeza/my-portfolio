@@ -6,7 +6,6 @@ export default () => {
     const aboutMeRef = useRef(null)
     const visible = useIsVisible(aboutMeRef)
     const [imgHover, setImgHover] = useState(false)
-    console.log(visible)
 
     return (
         <section  className={` ${visible ? "translate-y-0 opacity-1 delay-300" : "translate-y-4 opacity-0"}  duration-500 py-[100px] h-screen w-[1000px] flex flex-col gap-7`}>
