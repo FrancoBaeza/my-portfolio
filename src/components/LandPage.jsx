@@ -99,10 +99,22 @@ export default () => {
       {/* left fixed side */}
       <div className="fixed left-0 bottom-0 z-50 w-[100px] flex flex-col items-center gap-4">
         <div className=" flex flex-col gap-4">
-          <Icon className={`${iconsClasses} ${animationSideBars} delay-[2.6s]`} url="" icon="github" />
-          <Icon className={`${iconsClasses} ${animationSideBars} delay-[2.4s]`} url="" icon="linkedin" />
-          <Icon className={`${iconsClasses} ${animationSideBars} delay-[2.2s]`} url="" icon="instagram" />
-          <Icon className={`${iconsClasses} ${animationSideBars} delay-[2.0s]`} url="" icon="mail" />
+          <span className={`${animationSideBars} delay-[2.6s]`}>
+            <Icon className={iconsClasses} url="" icon="github" />
+          </span>
+          <span className={`${animationSideBars} delay-[2.4s]`}>
+            <Icon className={iconsClasses} url="" icon="linkedin" />
+          </span>
+          <span className={`${animationSideBars} delay-[2.2s]`}>
+            <Icon className={iconsClasses} url="" icon="instagram" />
+          </span>
+          <span className={`${animationSideBars} delay-[2.0s]`}>
+            <Icon className={iconsClasses} url="" icon="mail" />
+          </span>
+          
+          
+          
+          
         </div>
         <span className="w-[1px] h-40  border-r-[2px] border-base-secondary "></span>
       </div>
@@ -122,7 +134,7 @@ export default () => {
             <h2 className={`delay-[1.4s] ${animationFirstSection} text-base-secondary text-7xl tracking-tighter font-bold w-[70%] leading-[80px] font-markProBold`}>reality</h2>
           </div>
           
-          <p className={`delay-[1.5s] ${animationFirstSection} text-400-primary w-[600px] font-markPro`}>
+          <p className={`delay-[1.5s] ${animationFirstSection} text-400-primary w-[600px] font-markPro tracking-wide`}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna
             aliqua. Ut enim ad minim veniam, quis nostrud exercitation
