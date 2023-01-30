@@ -1,9 +1,15 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
+
+import { useIsVisible } from "../hooks/useIsVisible"
 
 export default () => {
+    const aboutMeRef = useRef(null)
+    const visible = useIsVisible(aboutMeRef)
     const [imgHover, setImgHover] = useState(false)
+    console.log(visible)
+
     return (
-        <section className="py-[100px] h-screen w-[1000px]">
+        <section  className={` ${visible ? "translate-y-0 opacity-1 delay-300" : "translate-y-4 opacity-0"}  duration-500 py-[100px] h-screen w-[1000px] flex flex-col gap-7`}>
             {/* title */}
             <div className="flex flex-row justify-center items-center gap-3">
                 <hr className=" border-base-secondary border w-44"/>
@@ -12,7 +18,7 @@ export default () => {
             </div>
 
             {/* body */}
-            <div className="flex flex-col">
+            <div ref={aboutMeRef} className="flex flex-col">
                 <div className="flex flex-row h-[500px]">
                     <div className="w-2/5 h-[350px] flex justify-center items-center relative">
                         <span className={`border-t-2 border-l-2 border-base-secondary rounded-tl-md h-[50px] w-[150px] absolute z-50 duration-[0.5s] ${imgHover ? "top-3 left-9" : "top-2 left-8"}`}></span>
@@ -22,7 +28,7 @@ export default () => {
                             onMouseLeave={() => setImgHover(false)} 
                             src="https://picsum.photos/300" 
                             alt="profile" 
-                            className={`cursor-pointer rounded-md duration-[0.5s] ${imgHover ? "grayscale-0" : "grayscale scale-[.99]"}`}
+                            className={`rounded-md duration-[0.5s] ${imgHover ? "grayscale-0" : "grayscale scale-[.99]"}`}
                         />
 
                         <span className={`border-b-2 border-r-2 border-base-secondary rounded-br-md h-[50px] w-[150px] absolute z-50 duration-[0.5s] ${imgHover ? "bottom-3 right-9" : "bottom-2 right-8"}`}></span>
