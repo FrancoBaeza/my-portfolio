@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Icon from "./icons/SocialIcon";
 import AboutMe from "./AboutMe";
 import Experience from "./Experience";
-// import Projects from "./Projects";
+import Projects from "./Projects";
 import Contact from "./Contact";
 import { useScrollDirection } from "../hooks/useScrollDirection";
 
@@ -185,6 +185,7 @@ export default () => {
                 <Experience />
 
 				{/* 3. projects */}
+                <Projects />
 
 				{/* 4. contact */}
 				<Contact />
