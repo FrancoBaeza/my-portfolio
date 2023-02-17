@@ -211,6 +211,11 @@ export default () => {
                     francobaezagraf@gmail.com
                 </a>
             </div>
+
+            {/* development message */}
+            <div className="fixed bottom-0 h-10 bg-red-500 w-screen z-[1000] flex justify-center items-center text-slate-100">
+                This is a work in progress! I'm still working on it.
+            </div>
         </div>
     );
 };
