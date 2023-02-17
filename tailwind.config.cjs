@@ -21,6 +21,9 @@ module.exports = {
         markPro: ["Regular", "sans-serif"],
         markProBold: ["Bold", "sans-serif"],
       },
+      backgroundImage: {
+        "turnera" : "url('/projectPhotos/turnera.png')",
+      },
     },
   },
   plugins: [],
