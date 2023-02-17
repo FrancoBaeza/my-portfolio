@@ -14,6 +14,8 @@ export default () => {
     const [active, setActive] = useState(false);
     const [scrollDir, isTop] = useScrollDirection();
 
+    const [wip, setWip] = useState(true);
+
     useEffect(() => {
         setActive(true);
     }, []);
@@ -184,19 +186,23 @@ export default () => {
                 {/* 2. experience */}
                 <Experience />
 
-				{/* 3. projects */}
+                {/* 3. projects */}
                 <Projects />
 
-				{/* 4. contact */}
-				<Contact />
+                {/* 4. contact */}
+                <Contact />
 
                 {/* footer */}
                 <div className=" my-5 text-center">
                     <p className="text-300-primary text-sm font-mono tracking-[2px]">
-                        Build by Franco Baeza 
+                        Build by Franco Baeza
                     </p>
                     <p className="text-300-primary text-sm font-mono tracking-[2px]">
-                        <Icon icon={'registered'} className=" inline  fill-300-primary w-[13px]" /> 2023
+                        <Icon
+                            icon={"registered"}
+                            className=" inline  fill-300-primary w-[13px]"
+                        />{" "}
+                        2023
                     </p>
                 </div>
             </div>
@@ -213,9 +219,23 @@ export default () => {
             </div>
 
             {/* development message */}
-            <div className="fixed bottom-0 h-10 bg-red-500 w-screen z-[1000] flex justify-center items-center text-slate-100">
-                This is a work in progress! I'm still working on it.
-            </div>
+            {wip && (
+                <div className="fixed bottom-0 h-10 bg-red-500 w-screen z-[1000] flex justify-center items-center text-slate-100">
+                    This is a work in progress! I'm still working on it.
+                    <svg
+                        className="w-5 fill-base-primary cursor-pointer fixed right-3"
+                        onClick={() => setWip(false)}
+                        clip-rule="evenodd"
+                        fill-rule="evenodd"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="2"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path d="m12 10.93 5.719-5.72c.146-.146.339-.219.531-.219.404 0 .75.324.75.749 0 .193-.073.385-.219.532l-5.72 5.719 5.719 5.719c.147.147.22.339.22.531 0 .427-.349.75-.75.75-.192 0-.385-.073-.531-.219l-5.719-5.719-5.719 5.719c-.146.146-.339.219-.531.219-.401 0-.75-.323-.75-.75 0-.192.073-.384.22-.531l5.719-5.719-5.72-5.719c-.146-.147-.219-.339-.219-.532 0-.425.346-.749.75-.749.192 0 .385.073.531.219z" />
+                    </svg>
+                </div>
+            )}
         </div>
     );
 };
