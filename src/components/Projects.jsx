@@ -11,11 +11,20 @@ export default () => {
     const visible = useIsVisible(projectsRef);
 
     useEffect(() => {
-        setTimeout(() => {
-            setTurneraTime(true);
-            setTimeout(() => setTurneraFinal(true), 100);
-        }, 2000);
+        if(turnera){
+            setTimeout(() => {
+                setTurneraTime(true);
+                setTimeout(() => setTurneraFinal(true), 100);
+            }, 600);
+        }
     }, [turnera]);
+
+    const closeTurnera = () => {
+        setTurneraFinal(false);
+        setTimeout(() => setTurneraTime(false), 200);
+        setTimeout(() => setTurnera(false), 500);
+    }
+
     return (
         <section
             className={` ${
@@ -44,6 +53,15 @@ export default () => {
                                 turnera ? "w-full h-full" : "w-4/5 h-[490px]"
                             } duration-300 rounded shadow-lg flex flex-col items-center justify-between bg-gradient-to-br from-[#365F7F] to-[#B784B2]`}
                         >
+
+                            {/* cruz para cerrar la turnera */}
+                            {turneraFinal && (
+                                <div className={` ${turneraFinal ? "opacity-1" : "opacity-0"} duration-500 absolute right-5 top-3 cursor-pointer`} onClick={closeTurnera}>
+                                    <Icon icon="close" className={`w-6 fill-base-primary`} />
+                                </div>
+                            )}
+
+                            {/* titulo de la turnera */}
                             <div className=" flex flex-col items-center">
                                 <h2
                                     className={` ${
@@ -62,6 +80,8 @@ export default () => {
                                     A simple and easy way to manage your clients
                                 </p>
                             </div>
+
+                            {/* imagen de la turnera y descripción*/}
                             {turneraTime ? (
                                 <div className={` ${turneraFinal ? "opacity-1" : "opacity-0"} duration-500 h-full w-3/4 flex flex-col `}>
                                     <div className="w-full mt-8 flex flex-col gap-3">
@@ -72,7 +92,8 @@ export default () => {
                                             manage their clients and
                                             appointments.
                                         </p>
-                                        <p className="bg-base-bg/90 rounded px-3 py-2 font-markPro text-400-primary shadow-lg leading-[22px]">
+                                        <p className="bg-base-bg/90 rounded px-3 py-2 font-markPro text-400-primary shadow-lg leading-[22px] flex flex-row gap-2">
+                                            <Icon icon="user" className={`w-16 fill-base-primary self-center`}/>
                                             Following the users's needs, we
                                             developed a system that allows the
                                             user to create, edit and delete
@@ -80,7 +101,8 @@ export default () => {
                                             record of the clients status and the
                                             appointments history.
                                         </p>
-                                        <p className="bg-base-bg/90 rounded px-3 py-2 font-markPro text-400-primary shadow-lg leading-[22px]">
+                                        <p className="bg-base-bg/90 rounded px-3 py-2 font-markPro text-400-primary shadow-lg leading-[22px] flex flex-row gap-2">
+                                            <Icon icon="wsp" className={`w-16 fill-base-primary self-center`}/>
                                             The system algo integrated a
                                             Whastsapp chat-bot that allows the
                                             user to automate the process of

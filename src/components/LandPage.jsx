@@ -225,10 +225,10 @@ export default () => {
                     <svg
                         className="w-5 fill-base-primary cursor-pointer fixed right-3"
                         onClick={() => setWip(false)}
-                        clip-rule="evenodd"
-                        fill-rule="evenodd"
-                        stroke-linejoin="round"
-                        stroke-miterlimit="2"
+                        clipRule="evenodd"
+                        fillRule="evenodd"
+                        strokeLinejoin="round"
+                        strokeMiterlimit="2"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
                     >
