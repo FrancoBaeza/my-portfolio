@@ -1,10 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 
-import Icon from "./icons/SocialIcon";
 import { useIsVisible } from "../hooks/useIsVisible";
 
-export default () => {
-    const contactRef = useRef(null);
+export default ({ contactRef, setContactModal}) => {
     const visible = useIsVisible(contactRef);
 
     return (
@@ -30,16 +28,17 @@ export default () => {
             {/* body */}
             <div className=" flex flex-col  items-center gap-7 w-1/2">
                 <p className="text-400-primary font-markPro tracking-wide leading-7 text-center">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    Don't be shy! I'm always open to new opportunities and projects. If you have a question or just want to say hi, feel free to send me a message.
                 </p>
                 <button
+                    onClick={() => setContactModal(true)}
                     className={` text-400-primary hover:text-base-primary hover:bg-base-secondary/30 duration-300 font-mono p-3 border-base-secondary border-2 rounded`}
                 >
                    Give me a call!
                 </button>
             </div>
+
+            
         </section>
     );
 };

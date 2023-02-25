@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
-import Icon from "./icons/SocialIcon";
+import SocialIcon from "./icons/SocialIcon";
+import Icon from "./icons/Icon";
 import AboutMe from "./AboutMe";
 import Experience from "./Experience";
 import Projects from "./Projects";
@@ -11,14 +12,28 @@ export default () => {
     const iconsClasses =
         " w-[25px] hover:fill-base-secondary hover:-translate-y-1 duration-200 fill-base-primary cursor-pointer";
 
+    const [contactModal, setContactModal] = useState(false);
     const [active, setActive] = useState(false);
     const [scrollDir, isTop] = useScrollDirection();
+
+    const aboutMeRef = useRef(null);
+    const experienceRef = useRef(null);
+    const projectsRef = useRef(null);
+    const contactRef = useRef(null);
 
     const [wip, setWip] = useState(true);
 
     useEffect(() => {
         setActive(true);
     }, []);
+
+    useEffect(() => {
+        if (contactModal) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+    }, [contactModal]);
 
     const animationFirstSection = `duration-[0.5s] ${
         active ? "translate-y-0 opacity-1" : "translate-y-3 opacity-0"
@@ -29,6 +44,12 @@ export default () => {
     const animationSideBars = `duration-[0.6s] ${
         active ? "opacity-1" : "opacity-0"
     }`;
+
+    const scrollTo = (ref) => {
+        if (ref && ref.current /* + other conditions */) {
+            ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    };
 
     return (
         <div className=" bg-base-bg">
@@ -66,51 +87,51 @@ export default () => {
 
                 <div className="flex flex-row gap-5 font-mono text-base-primary">
                     <span className={`delay-[0.3s] ${animationHeader}`}>
-                        <a
-                            href=""
+                        <button
+                            onClick={() => scrollTo(aboutMeRef)}
                             className=" hover:text-base-secondary duration-200"
                         >
                             <span className=" mr-[3px] text-base-secondary">
                                 1.
                             </span>
                             About
-                        </a>
+                        </button>
                     </span>
 
                     <span className={`delay-[0.4s] ${animationHeader}`}>
-                        <a
-                            href=""
+                        <button
+                            onClick={() => scrollTo(experienceRef)}
                             className=" hover:text-base-secondary duration-200"
                         >
                             <span className=" mr-[3px] text-base-secondary">
                                 2.
                             </span>
                             Experience
-                        </a>
+                        </button>
                     </span>
 
                     <span className={`delay-[0.5s] ${animationHeader}`}>
-                        <a
-                            href=""
+                        <button
+                            onClick={() => scrollTo(projectsRef)}
                             className=" hover:text-base-secondary duration-200"
                         >
                             <span className=" mr-[3px] text-base-secondary">
                                 3.
                             </span>
                             Projects
-                        </a>
+                        </button>
                     </span>
 
                     <span className={`delay-[0.6s] ${animationHeader}`}>
-                        <a
-                            href=""
+                        <button
+                            onClick={() => scrollTo(contactRef)}
                             className=" hover:text-base-secondary duration-200"
                         >
                             <span className=" mr-[3px] text-base-secondary">
                                 4.
                             </span>
                             Contact
-                        </a>
+                        </button>
                     </span>
                 </div>
             </div>
@@ -119,20 +140,32 @@ export default () => {
             <div className="fixed left-0 bottom-0 z-50 w-[100px] flex flex-col items-center gap-4">
                 <div className=" flex flex-col gap-4">
                     <span className={`${animationSideBars} delay-[2.6s]`}>
-                        <Icon className={iconsClasses} url="" icon="github" />
+                        <SocialIcon
+                            className={iconsClasses}
+                            url="https://github.com/FrancoBaeza"
+                            icon="github"
+                        />
                     </span>
                     <span className={`${animationSideBars} delay-[2.4s]`}>
-                        <Icon className={iconsClasses} url="" icon="linkedin" />
+                        <SocialIcon
+                            className={iconsClasses}
+                            url="https://www.linkedin.com/in/franco-baezagraf-201083264/"
+                            icon="linkedin"
+                        />
                     </span>
                     <span className={`${animationSideBars} delay-[2.2s]`}>
-                        <Icon
+                        <SocialIcon
                             className={iconsClasses}
-                            url=""
+                            url="https://www.instagram.com/franbaezag/"
                             icon="instagram"
                         />
                     </span>
                     <span className={`${animationSideBars} delay-[2.0s]`}>
-                        <Icon className={iconsClasses} url="" icon="mail" />
+                        <SocialIcon
+                            className={iconsClasses}
+                            url="https://wa.me/5492236364409"
+                            icon="wsp"
+                        />
                     </span>
                 </div>
                 <span className="w-[1px] h-40  border-r-[2px] border-base-secondary "></span>
@@ -152,23 +185,32 @@ export default () => {
                         <h1
                             className={`delay-[1.3s] ${animationFirstSection} text-base-primary text-7xl tracking-tighter font-bold w-[70%] leading-[80px] font-markProBold`}
                         >
-                            I turn your ideas into
+                            Just a guy
                         </h1>
                         <h2
-                            className={`delay-[1.4s] ${animationFirstSection} text-base-secondary text-7xl tracking-tighter font-bold w-[70%] leading-[80px] font-markProBold`}
+                            className={`delay-[1.4s] ${animationFirstSection} text-base-primary text-7xl tracking-tighter font-bold w-[70%] leading-[80px] font-markProBold`}
                         >
-                            reality
+                            who loves to{" "}
+                            <span className=" text-base-secondary">code</span>
                         </h2>
                     </div>
 
                     <p
                         className={`delay-[1.5s] ${animationFirstSection} text-400-primary w-[600px] font-markPro tracking-wide`}
                     >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat.
+                        I'm an advanced systems engineer student at the
+                        Adventist River Plate Univerity in Argentina. I'm
+                        passionate about web development and I'm always looking
+                        for new challenges.
+                        <br />
+                        Currently I'm working at{" "}
+                        <a
+                            href="https://miportafoliodigital.com/"
+                            className="text-base-secondary hover:text-400-primary duration-200"
+                        >
+                            Mi Portafolio Digital
+                        </a>{" "}
+                        as a web developer.
                     </p>
 
                     <span className={`delay-[1.6s] ${animationFirstSection}`}>
@@ -181,16 +223,19 @@ export default () => {
                 </section>
 
                 {/* 1. about me */}
-                <AboutMe />
+                <AboutMe aboutMeRef={aboutMeRef} />
 
                 {/* 2. experience */}
-                <Experience />
+                <Experience experienceRef={experienceRef} />
 
                 {/* 3. projects */}
-                <Projects />
+                <Projects projectsRef={projectsRef} />
 
                 {/* 4. contact */}
-                <Contact />
+                <Contact
+                    contactRef={contactRef}
+                    setContactModal={setContactModal}
+                />
 
                 {/* footer */}
                 <div className=" my-5 text-center">
@@ -198,7 +243,7 @@ export default () => {
                         Build by Franco Baeza
                     </p>
                     <p className="text-300-primary text-sm font-mono tracking-[2px]">
-                        <Icon
+                        <SocialIcon
                             icon={"registered"}
                             className=" inline  fill-300-primary w-[13px]"
                         />{" "}
@@ -234,6 +279,41 @@ export default () => {
                     >
                         <path d="m12 10.93 5.719-5.72c.146-.146.339-.219.531-.219.404 0 .75.324.75.749 0 .193-.073.385-.219.532l-5.72 5.719 5.719 5.719c.147.147.22.339.22.531 0 .427-.349.75-.75.75-.192 0-.385-.073-.531-.219l-5.719-5.719-5.719 5.719c-.146.146-.339.219-.531.219-.401 0-.75-.323-.75-.75 0-.192.073-.384.22-.531l5.719-5.719-5.72-5.719c-.146-.147-.219-.339-.219-.532 0-.425.346-.749.75-.749.192 0 .385.073.531.219z" />
                     </svg>
+                </div>
+            )}
+
+            {/* modal */}
+            {contactModal && (
+                <div className=" fixed top-0 left-0 right-0 bottom-0 w-screen h-screen z-50 flex justify-center items-center backdrop-brightness-75">
+                    <div className="w-[400px] bg-base-bg border-2 border-base-secondary rounded flex flex-col gap-10 items-center p-8 relative">
+                        <h3 className=" text-base-primary text-2xl font-bold  font-markProBold ">
+                            How do you want to talk?
+                        </h3>
+                        <div className="flex flex-col mb-5 gap-6">
+                            <a
+                                href="https://wa.me/5492236364409"
+                                className={` cursor-pointer w-44 flex flex-row justify-center gap-2 text-400-primary hover:text-base-primary hover:bg-base-secondary/30 duration-300 font-mono p-3 border-base-secondary border-2 rounded`}
+                            >
+                                <Icon
+                                    icon="wsp"
+                                    className={` fill-400-primary`}
+                                />
+                                Message me!
+                            </a>
+                            <a
+                                className={`cursor-pointer w-44 flex flex-row justify-center gap-2 text-400-primary hover:text-base-primary hover:bg-base-secondary/30 duration-300 font-mono p-3 border-base-secondary border-2 rounded`}
+                            >
+                                <Icon
+                                    icon="mail"
+                                    className={`w-6 fill-400-primary`}
+                                />
+                                Email me!
+                            </a>
+                        </div>
+                        <span className=" absolute right-2 top-2 cursor-pointer" onClick={() => setContactModal(false)}>
+                            <Icon icon="close" className={`w-5 fill-base-primary`}/>
+                        </span>
+                    </div>
                 </div>
             )}
         </div>

@@ -3,11 +3,10 @@ import { useState, useRef, useEffect } from "react";
 import { useIsVisible } from "../hooks/useIsVisible";
 import Icon from "./icons/Icon";
 
-export default () => {
+export default ({ projectsRef }) => {
     const [turnera, setTurnera] = useState(false);
     const [turneraTime, setTurneraTime] = useState(false);
     const [turneraFinal, setTurneraFinal] = useState(false);
-    const projectsRef = useRef(null);
     const visible = useIsVisible(projectsRef);
 
     useEffect(() => {
@@ -27,11 +26,12 @@ export default () => {
 
     return (
         <section
+            ref={projectsRef}
             className={` ${
                 visible
                     ? "translate-y-0 opacity-1 delay-300"
                     : "translate-y-4 opacity-0"
-            }  duration-500 py-[100px] h-screen w-[1000px] flex flex-col gap-7`}
+            }  duration-500 py-[100px]  w-[1000px] flex flex-col gap-7`}
         >
             {/* title */}
             <div className="flex flex-row justify-center items-center gap-3">
@@ -45,7 +45,7 @@ export default () => {
             </div>
 
             {/* body */}
-            <div ref={projectsRef} className="flex flex-col">
+            <div className="flex flex-col">
                 <div className="">
                     <div className="w-full h-[550px] relative">
                         <div
@@ -217,11 +217,13 @@ export default () => {
                                 professional practice program.
                             </p>
                             <p className=" font-markPro text-400-primary text-base">
-                                We learned about the entire software <span className="text-base-secondary">development
-                                cycle</span> , from acquiring the client to deploying
-                                the application. We also customized the
-                                application to meet the specific needs of the
-                                client.
+                                We learned about the entire software{" "}
+                                <span className="text-base-secondary">
+                                    development cycle
+                                </span>{" "}
+                                , from acquiring the client to deploying the
+                                application. We also customized the application
+                                to meet the specific needs of the client.
                             </p>
                             <p className=" font-mono text-base-secondary flex-grow items-end flex">
                                 Click me to get more info!

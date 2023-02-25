@@ -3,11 +3,10 @@ import { useState, useRef, useEffect } from "react";
 import Icon from "./icons/SocialIcon";
 import { useIsVisible } from "../hooks/useIsVisible";
 
-export default () => {
+export default ({ experienceRef }) => {
     const [year, setYear] = useState(2023);
     const [chg, setChg] = useState(true);
-    const expreienceRef = useRef(null);
-    const visible = useIsVisible(expreienceRef);
+    const visible = useIsVisible(experienceRef);
 
     useEffect(() => {
         setTimeout(() => {
@@ -17,7 +16,7 @@ export default () => {
 
     return (
         <section
-            ref={expreienceRef}
+            ref={experienceRef}
             className={`${
                 visible
                     ? "translate-y-0 opacity-1 delay-300"
