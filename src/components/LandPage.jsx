@@ -2,8 +2,8 @@ import { useEffect, useState, useRef } from "react";
 
 import SocialIcon from "./icons/SocialIcon";
 import Icon from "./icons/Icon";
-import AboutMe from "./AboutMe";
-import Experience from "./Experience";
+import AboutMe from "./about-me/AboutMe";
+import Experience from "./experience/Experience";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import { useScrollDirection } from "../hooks/useScrollDirection";
@@ -25,6 +25,10 @@ export default () => {
 
     useEffect(() => {
         setActive(true);
+
+        setTimeout(() => {
+            setWip(false);
+        }, 5000);
     }, []);
 
     useEffect(() => {
@@ -198,19 +202,19 @@ export default () => {
                     <p
                         className={`delay-[1.5s] ${animationFirstSection} text-400-primary w-[600px] font-markPro tracking-wide`}
                     >
-                        I'm an advanced systems engineer student at the
-                        Adventist River Plate Univerity in Argentina. I'm
+                        I am a systems engineer graduated from the
+                        Adventist University of Plata in Argentina. I'm
                         passionate about web development and I'm always looking
                         for new challenges.
                         <br />
-                        Currently I'm working at{" "}
+                        {/* Currently I'm working at{" "}
                         <a
                             href="https://miportafoliodigital.com/"
                             className="text-base-secondary hover:text-400-primary duration-200"
                         >
                             Mi Portafolio Digital
                         </a>{" "}
-                        as a web developer.
+                        as a web developer. */}
                     </p>
 
                     <span className={`delay-[1.6s] ${animationFirstSection}`}>
