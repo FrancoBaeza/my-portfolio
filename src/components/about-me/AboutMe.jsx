@@ -40,7 +40,7 @@ export default ({ aboutMeRef }) => {
                             onMouseEnter={() => setImgHover(true)}
                             onMouseLeave={() => setImgHover(false)}
                             // src="https://picsum.photos/300"
-                            src="/src/assets/portrait.jpg"
+                            src="/projectPhotos/portrait.jpg"
 
                             alt="profile"
                             className={` h-[300px] rounded-md duration-[0.5s] ${
