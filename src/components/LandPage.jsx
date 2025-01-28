@@ -4,7 +4,7 @@ import SocialIcon from "./icons/SocialIcon";
 import Icon from "./icons/Icon";
 import AboutMe from "./about-me/AboutMe";
 import Experience from "./experience/Experience";
-import Projects from "./Projects";
+import Projects from "./projects/Projects";
 import Contact from "./Contact";
 import { useScrollDirection } from "../hooks/useScrollDirection";
 
@@ -153,7 +153,7 @@ export default () => {
                     <span className={`${animationSideBars} delay-[2.4s]`}>
                         <SocialIcon
                             className={iconsClasses}
-                            url="https://www.linkedin.com/in/franco-baezagraf-201083264/"
+                            url="https://www.linkedin.com/in/francobaezagraf"
                             icon="linkedin"
                         />
                     </span>
@@ -202,10 +202,10 @@ export default () => {
                     <p
                         className={`delay-[1.5s] ${animationFirstSection} text-400-primary w-[600px] font-markPro tracking-wide`}
                     >
-                        I am a systems engineer graduated from the
-                        Adventist University of Plata in Argentina. I'm
-                        passionate about web development and I'm always looking
-                        for new challenges.
+                        I am a systems engineer graduated from the Adventist
+                        University of Plata in Argentina. I'm passionate about
+                        web development and I'm always looking for new
+                        challenges.
                         <br />
                         {/* Currently I'm working at{" "}
                         <a
@@ -219,6 +219,7 @@ export default () => {
 
                     <span className={`delay-[1.6s] ${animationFirstSection}`}>
                         <button
+                            onClick={() => window.open("/CV.pdf", "_blank")}
                             className={` text-400-primary hover:text-base-primary hover:bg-base-secondary/30 duration-300 font-mono self-start mt-10 p-3 border-base-secondary border-2 rounded`}
                         >
                             Check out my resume!
@@ -261,7 +262,7 @@ export default () => {
                 <span className=" border-base-secondary border-[2px] !border-t-0 rounded-b-md w-6 h-44"></span>
                 <a
                     className={`${animationSideBars} delay-[3s] vertical-writing text-base-primary text-sm tracking-[2px] font-markPro hover:text-base-secondary duration-200`}
-                    href=""
+                    href="mailto:francobaezagraf@gmail.com"
                 >
                     francobaezagraf@gmail.com
                 </a>
@@ -305,6 +306,7 @@ export default () => {
                                 Message me!
                             </a>
                             <a
+                                href="mailto:francobaezagraf@gmail.com"
                                 className={`cursor-pointer w-44 flex flex-row justify-center gap-2 text-400-primary hover:text-base-primary hover:bg-base-secondary/30 duration-300 font-mono p-3 border-base-secondary border-2 rounded`}
                             >
                                 <Icon
@@ -314,8 +316,14 @@ export default () => {
                                 Email me!
                             </a>
                         </div>
-                        <span className=" absolute right-2 top-2 cursor-pointer" onClick={() => setContactModal(false)}>
-                            <Icon icon="close" className={`w-5 fill-base-primary`}/>
+                        <span
+                            className=" absolute right-2 top-2 cursor-pointer"
+                            onClick={() => setContactModal(false)}
+                        >
+                            <Icon
+                                icon="close"
+                                className={`w-5 fill-base-primary`}
+                            />
                         </span>
                     </div>
                 </div>

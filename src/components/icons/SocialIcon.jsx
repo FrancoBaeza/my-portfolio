@@ -1,6 +1,6 @@
 export default ({ className, url, icon }) => {
     return (
-        <a href={url}>
+        <a href={url} target="_blank" rel="noreferrer">
             {/* github */}
             {icon === "github" && (
                 <svg
