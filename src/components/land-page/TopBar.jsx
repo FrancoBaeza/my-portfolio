@@ -99,7 +99,7 @@ export default ({
                     onClick={() => scrollTo(aboutMeRef)}
                     className="hover:text-base-secondary duration-200"
                 >
-                    <Menu color="red" />
+                    <Menu className=" stroke-base-primary" />
                 </button>
             </div>
         </div>
