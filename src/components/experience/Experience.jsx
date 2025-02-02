@@ -5,6 +5,7 @@ import { useIsVisible } from "../../hooks/useIsVisible";
 import MiPortafolioSection from "./MiPortafolioSection";
 import XirectSection from "./XirectSection";
 import UapSection from "./UapSection";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default ({ experienceRef }) => {
     const [year, setYear] = useState(2023);
@@ -24,23 +25,23 @@ export default ({ experienceRef }) => {
                 visible
                     ? "translate-y-0 opacity-1 delay-300"
                     : "translate-y-4 opacity-0"
-            } duration-500 py-[350px] h-screen w-[1000px] flex flex-col gap-7`}
+            } duration-500 md:py-[350px] md:h-screen md:w-[1000px] flex flex-col gap-7`}
         >
             {/* title */}
             <div className="flex flex-row justify-center items-center gap-3">
                 {/* <hr className=" border-base-secondary border w-60"/> */}
                 <h2
-                    className={`text-base-primary text-3xl tracking-tighter font-bold  leading-[80px] font-markProBold`}
+                    className={`text-base-primary text-2xl md:text-3xl tracking-tighter font-bold  leading-[80px] font-markProBold`}
                 >
                     My Road Map
                 </h2>
-                <hr className=" border-base-secondary border w-96" />
+                <hr className=" border-base-secondary border w-44 md:w-96" />
             </div>
 
             {/* body */}
-            <div className="flex flex-row px-[100px] gap-10">
-                {/* year buttons */}
-                <div className=" flex flex-col items-end min-w-max">
+            <div className="flex flex-col md:flex-row md:px-[100px] gap-10">
+                {/* Jobs buttons PC */}
+                <div className=" hidden md:flex flex-col items-end min-w-max">
                     <div className="flex flex-row items-center my-[-4px]">
                         <p
                             onClick={() => {
@@ -148,15 +149,52 @@ export default ({ experienceRef }) => {
                     </div>
                 </div>
 
+                {/* Jobs slider MOBILE */}
+                <div className=" md:hidden flex flex-row gap-4 justify-center w-full">
+                    <button
+                        onClick={() => {
+                            if (year === 2023) return;
+                            setYear(year + 1);
+                            setChg(false);
+                        }}
+                    >
+                        <ChevronLeft
+                            className={` w-7 ${
+                                year === 2023
+                                    ? " stroke-slate-500"
+                                    : "stroke-base-primary"
+                            }`}
+                        />
+                    </button>
+                    <p
+                        className={` cursor-pointer text-base-primary duration-300 font-bold font-markProBold pr-1`}
+                    >
+                        {year === 2023 && "Universidad Adventista del Plata"}
+                        {year === 2022 && "Xirect Software Solutions"}
+                        {year === 2021 && "Mi Portafolio Digital"}
+                    </p>
+                    <button
+                        onClick={() => {
+                            if (year === 2021) return;
+                            setYear(year - 1);
+                            setChg(false);
+                        }}
+                    >
+                        <ChevronRight
+                            className={` w-7  ${
+                                year === 2021
+                                    ? " stroke-slate-500"
+                                    : "stroke-base-primary"
+                            }`}
+                        />
+                    </button>
+                </div>
+
                 {/* descriptions */}
                 <div className={`w-full h-full`}>
-                    {year === 2023 && (
-                        <UapSection chg={chg} />
-                    )}
+                    {year === 2023 && <UapSection chg={chg} />}
 
-                    {year === 2022 && (
-                        <XirectSection chg={chg} />
-                    )}
+                    {year === 2022 && <XirectSection chg={chg} />}
 
                     {year === 2021 && <MiPortafolioSection chg={chg} />}
                 </div>

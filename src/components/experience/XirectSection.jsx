@@ -17,7 +17,7 @@ export default ({ chg }) => {
                             icon="triangle"
                             className={`h-2 w-2 fill-base-secondary rotate-90 mt-2 ml-2`}
                         />
-                        <p className="text-400-primary w-[600px] font-markPro tracking-wide mt-1 leading-5">
+                        <p className="text-400-primary md:w-[600px] font-markPro tracking-wide mt-1 leading-5">
                             I continued my professional career at Xirect as a
                             full stack developer using the{" "}
                             <span className="text-base-secondary">MERN</span>{" "}
@@ -31,7 +31,7 @@ export default ({ chg }) => {
                             icon="triangle"
                             className={`h-2 w-2 fill-base-secondary rotate-90 mt-2 ml-2`}
                         />
-                        <p className="text-400-primary w-[600px] font-markPro tracking-wide mt-1 leading-5">
+                        <p className="text-400-primary md:w-[600px] font-markPro tracking-wide mt-1 leading-5">
                             Additionally, I led a small team in the development
                             of an embedded{" "}
                             <span className="text-base-secondary">
@@ -46,7 +46,7 @@ export default ({ chg }) => {
                             icon="triangle"
                             className={`h-2 w-2 fill-base-secondary rotate-90 mt-2 ml-2`}
                         />
-                        <p className="text-400-primary w-[600px] font-markPro tracking-wide mt-1 leading-5">
+                        <p className="text-400-primary md:w-[600px] font-markPro tracking-wide mt-1 leading-5">
                             This experience allowed me to enhance my project
                             planning and management skills, learning how to
                             break down, organize, and prioritize objectives into

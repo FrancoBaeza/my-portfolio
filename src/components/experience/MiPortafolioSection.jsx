@@ -12,7 +12,7 @@ export default ({ chg }) => {
                         icon="triangle"
                         className={`h-2 w-2 fill-base-secondary rotate-90 mt-2 ml-2`}
                     />
-                    <p className="text-400-primary w-[600px] font-markPro tracking-wide mt-1 leading-5">
+                    <p className="text-400-primary md:w-[600px] font-markPro tracking-wide mt-1 leading-5">
                         I began my professional career at Mi Portafolio Digital
                         as a full stack  <span className="text-base-secondary">PHP and Laravel</span> developer. I joined a growing team
                         with the goal of completing the development of a drop
@@ -25,7 +25,7 @@ export default ({ chg }) => {
                         icon="triangle"
                         className={`h-2 w-2 fill-base-secondary rotate-90 mt-2 ml-2`}
                     />
-                    <p className="text-400-primary w-[600px] font-markPro tracking-wide mt-1 leading-5">
+                    <p className="text-400-primary md:w-[600px] font-markPro tracking-wide mt-1 leading-5">
                         During this experience, I gained a deep understanding of
                         the entire development lifecycle, from planning to
                         implementation, as well as the incorporation of new
@@ -38,7 +38,7 @@ export default ({ chg }) => {
                         icon="triangle"
                         className={`h-2 w-2 fill-base-secondary rotate-90 mt-2 ml-2`}
                     />
-                    <p className="text-400-primary w-[600px] font-markPro tracking-wide mt-1 leading-5">
+                    <p className="text-400-primary md:w-[600px] font-markPro tracking-wide mt-1 leading-5">
                         One of the biggest challenges I faced was integrating
                         the platform with multiple payment gateways, such as
                         Stripe, PayPal, and local solutions. This allowed me to

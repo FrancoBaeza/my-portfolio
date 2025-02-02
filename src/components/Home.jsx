@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import LandPage from "./LandPage";
+import LandPage from "./land-page/LandPage";
 
 export default () => {
     return (
