@@ -1,5 +1,7 @@
 import { useIsVisible } from "../../hooks/useIsVisible";
 import ProjectCard from "./ProjectCard";
+import Icon from "../icons/Icon";
+import { ProjectCardMobile } from "./ProjectCardMobile";
 
 export default ({ projectsRef }) => {
     const visible = useIsVisible(projectsRef);
@@ -12,38 +14,39 @@ export default ({ projectsRef }) => {
             description: "A comprehensive personal finance application designed to simplify expense tracking and budget management. Features intuitive data visualization, smart categorization, and real-time spending insights to help users make informed financial decisions.",
             role: "Full-Stack Developer & UI/UX Designer - Built the entire application from concept to deployment, focusing on user experience and modern web development practices.",
             highlights: [
+                "Telegram & WhatsApp chatbot integration with OpenAI",
+                "Automatic receipt processing and transaction loading",
                 "Real-time expense tracking with intelligent categorization",
-                "Interactive data visualizations for spending patterns",
-                "Modern responsive design optimized for all devices",
-                "Secure data handling with PostgreSQL backend"
+                "Interactive data visualizations for spending patterns"
             ],
             technologies: [
-                { name: "Next.js 15", icon: "react" },
-                { name: "PostgreSQL", icon: "db" }
+                { name: "Next.js 15", icon: "next.js", fill: "#000000" },
+                { name: "PostgreSQL", icon: "db" },
+                { name: "Open AI", icon: "openai" }
             ],
             imageUrl: "/projectPhotos/spendings.jpeg",
             projectUrl: "https://spendings-two.vercel.app/",
             reverse: false
         },
         {
-            title: "Turnera",
-            subtitle: "Client Management System",
-            description: "A comprehensive appointment scheduling and client management system designed for professionals. Includes automated WhatsApp reminders, calendar integration, and a user-friendly dashboard for managing bookings and client relationships.",
-            role: "Backend Lead Developer - Focused on system architecture, database design, and API development using the MERN stack.",
+            title: "MatchFloor",
+            subtitle: "Real Estate Automation Plugin",
+            description: "A comprehensive plugin designed to revolutionize real estate agency operations by automating the entire property viewing scheduling process. From initial inquiry to final confirmation, MatchFloor handles all aspects of appointment management including availability tracking, automated reminders, and seamless calendar integration.",
+            role: "Tech Lead - Led a team of 5 developers in building this enterprise-level plugin, overseeing architecture decisions, code quality, and project delivery while contributing to both frontend and backend development.",
             highlights: [
-                "WhatsApp integration for automatic appointment reminders",
-                "Real-time appointment management and scheduling",
-                "Scalable MERN stack architecture",
-                "Professional practice program achievement"
+                "Complete automation of property viewing scheduling workflow",
+                "WordPress plugin architecture with custom admin dashboard",
+                "Advanced calendar management and availability tracking",
+                "Automated reminder system with confirmation handling"
             ],
             technologies: [
-                { name: "React", icon: "react" },
-                { name: "Node.js", icon: "node" },
-                { name: "MongoDB", icon: "mongo" },
-                { name: "Express", icon: "express" }
+                { name: "Next.js", icon: "next.js", fill: "#000000" },
+                { name: "Nest.js", icon: "node" },
+                { name: "MySQL", icon: "db" },
+                { name: "WordPress", icon: "wordpress" }
             ],
-            imageUrl: "/projectPhotos/turnera.png",
-            projectUrl: "https://turnera-frontend.vercel.app",
+            imageUrl: "/projectPhotos/matchfloor.png",
+            projectUrl: "https://matchfloor.com/",
             reverse: true
         },
         {
@@ -112,16 +115,14 @@ export default ({ projectsRef }) => {
             </div>
 
             {/* Mobile View */}
-            <div className="flex md:hidden flex-col items-center gap-6">
-                <div className="bg-base-bg/50 backdrop-blur-sm border border-base-secondary/20 rounded-lg p-6 shadow-lg">
-                    <p className="text-400-primary font-markPro tracking-wide leading-7 text-center">
-                        I'm currently optimizing the mobile experience for this section. 
-                        Please visit on desktop to explore my projects in detail.
-                    </p>
-                </div>
-                <p className="text-300-primary font-markPro text-sm text-center">
-                    Mobile portfolio coming soon! 📱
-                </p>
+            <div className="flex md:hidden flex-col gap-8">
+                {projects.map((project, index) => (
+                    <ProjectCardMobile
+                        key={project.title}
+                        isLast={index === projects.length - 1}
+                        project={project}
+                    />
+                ))}
             </div>
         </section>
     );

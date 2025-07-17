@@ -23,14 +23,8 @@ export default () => {
     const projectsRef = useRef(null);
     const contactRef = useRef(null);
 
-    const [wip, setWip] = useState(true);
-
     useEffect(() => {
         setActive(true);
-
-        setTimeout(() => {
-            setWip(false);
-        }, 5000);
     }, []);
 
     useEffect(() => {
@@ -198,25 +192,6 @@ export default () => {
                     francobaezagraf@gmail.com
                 </a>
             </div>
-
-            {/* development message */}
-            {wip && (
-                <div className="fixed bottom-0 h-10 bg-red-500 w-screen z-[1000] flex justify-center items-center text-slate-100">
-                    This is a work in progress! Be kind, I'm still working on it <Smile className="w-5 mx-2 " />
-                    <svg
-                        className="w-5 fill-base-primary cursor-pointer fixed right-3"
-                        onClick={() => setWip(false)}
-                        clipRule="evenodd"
-                        fillRule="evenodd"
-                        strokeLinejoin="round"
-                        strokeMiterlimit="2"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path d="m12 10.93 5.719-5.72c.146-.146.339-.219.531-.219.404 0 .75.324.75.749 0 .193-.073.385-.219.532l-5.72 5.719 5.719 5.719c.147.147.22.339.22.531 0 .427-.349.75-.75.75-.192 0-.385-.073-.531-.219l-5.719-5.719-5.719 5.719c-.146.146-.339.219-.531.219-.401 0-.75-.323-.75-.75 0-.192.073-.384.22-.531l5.719-5.719-5.72-5.719c-.146-.147-.219-.339-.219-.532 0-.425.346-.749.75-.749.192 0 .385.073.531.219z" />
-                    </svg>
-                </div>
-            )}
 
             {/* modal */}
             {contactModal && (
