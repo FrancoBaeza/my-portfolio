@@ -134,8 +134,7 @@ export default () => {
                     <p
                         className={`delay-[1.5s] ${animationFirstSection} text-400-primary md:w-[600px] font-markPro tracking-wide`}
                     >
-                        I am a systems engineer graduated from the Adventist
-                        University of Plata in Argentina. I'm passionate about
+                        I am a systems engineer graduated from the River Plate Adventist University in Argentina. I'm passionate about
                         web development and I'm always looking for new
                         challenges.
                         <br />

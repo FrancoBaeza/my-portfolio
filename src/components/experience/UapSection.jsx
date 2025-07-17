@@ -13,8 +13,7 @@ export default ({ chg }) => {
                         className={`h-2 w-2 fill-base-secondary rotate-90 mt-2 ml-2`}
                     />
                     <p className="text-400-primary md:w-[600px] font-markPro tracking-wide mt-1 leading-5">
-                        I joined the development team at Universidad Adventista
-                        del Plata as a full stack developer, working with
+                        I joined the development team at River Plate Adventist University as a full stack developer, working with
                         technologies such as <span className="text-base-secondary">PHP</span> and <span className="text-base-secondary">Ruby on Rails</span>.
                     </p>
                 </span>
